@@ -60,7 +60,9 @@ public class Generator {
             pass.append(alphabet.getAlphabet().charAt(index));
         }
 
-        return new Password(pass.toString());
+        Password password= new Password(pass.toString());
+        System.out.println("Generated Password: " + password.toValue());
+        return password;
     }
 
     private void printUsefulInfo() {
