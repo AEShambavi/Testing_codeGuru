@@ -21,12 +21,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure aws credentials
+      - name: Configure AWS Credentials
+        if: ${{ always() }} 
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::407234429974:role/CodeGuruSecurityGitHubAccessRole
-          aws-region: us-east-2
-          role-session-name: GitHubActionScript
+          role-to-assume: arn:aws:iam::407234429974:role/CodeguruRole
+          role-session-name: samplerolesession
+          aws-region: us-east-1
 
       - name: CodeGuru Security
         uses: aws-actions/codeguru-security@v1
