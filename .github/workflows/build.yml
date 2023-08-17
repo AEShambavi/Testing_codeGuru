@@ -1,5 +1,5 @@
 name: GitHub + CodeGuru integration
-on: [push]
+on: [push, pull_request]
 # permission can be added at job level or workflow level    
 permissions:
    id-token: write   # This is required for requesting the JWT
