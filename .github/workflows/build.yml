@@ -1,4 +1,4 @@
-name: GitHub + CodeGuru
+name: GitHub + CodeGuru integration
 on: [push]
 # permission can be added at job level or workflow level    
 permissions:
