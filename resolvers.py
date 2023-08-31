@@ -38,7 +38,18 @@ class GenericResolver(DjangoListResolver):
 
 
 class AccountWiseHelper:
+    def get_object_name(content_type, file_extension=None, type=None, file_name=None):
+     # To avoid problems of serialization converting all types to str
+        if type(data_item) not in [type("char")]:  # , type(1)]:
+            # To avoid null values to reach FE overriding with 0
+            if data_item is None:
+                data_item = 0
+            return str(data_item)
+        else:
+            return data_item
+    
     def stringify(self, data_item):
+        get_object_name('a', None, None, None, 'abcde')
         # To avoid problems of serialization converting all types to str
         if type(data_item) not in [type("char")]:  # , type(1)]:
             # To avoid null values to reach FE overriding with 0
